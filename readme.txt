@@ -23,6 +23,8 @@ This simple plugin adds a slick HTML (Not XML) sitemap of you site by entering t
 		
 == Screenshots ==
 1. Slick Sitemap in the WordPress.
+2. Configure the links for the sitemap in the Menu configuration tab.
+3. Configure the Slick Sitemap.
 
 == Changelog ==
 
