@@ -1,5 +1,5 @@
 === Slick Sitemap ===
-Contributors: Pengbo of http://pengbos.com
+Contributors: pengbos of http://pengbos.com
 Author URI: http://pengbos.com
 Donate link: http://pengbos.com/donate
 Tags: slick, sitemap, menu, shortcode, cms, configurable, wordpress, site, html
