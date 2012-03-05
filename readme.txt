@@ -1,5 +1,5 @@
 === Slick Sitemap ===
-Contributors: Pengbo Tang
+Contributors: Pengbo of http://pengbos.com
 Author URI: http://pengbos.com
 Donate link: http://pengbos.com/donate
 Tags: slick, sitemap, menu, shortcode, cms, configurable, wordpress, site, html
@@ -37,8 +37,8 @@ Nothing here until now..
 * Initial release of Slick Sitemap plugin.
 
 == Contributors ==
-Pengbo Tang, host of the pengbos.com http://pengbos.com - Plugin author
-Matt Everson of Astuteo, LLC http://astuteo.com/slickmap - CSS Creator
+Plugin author: Pengbo Tang, host of the pengbos.com http://pengbos.com - 
+CSS Creator: Matt Everson of Astuteo, LLC http://astuteo.com/slickmap - 
 
 == Follow us on Twitter == 
 [http://twitter.com/pengbos](http://twitter.com/pengbos)
