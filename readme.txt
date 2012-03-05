@@ -1,6 +1,6 @@
 === Slick Sitemap ===
-Contributors: Pengbo Tang of the pengbos.com
-              Matt Everson of Astuteo, LLC
+Contributors: Pengbo Tang
+Author URI: http://pengbos.com
 Donate link: http://pengbos.com/donate
 Tags: slick, sitemap, menu, shortcode, cms, configurable, wordpress, site, html
 Requires at least: 3.0.0
