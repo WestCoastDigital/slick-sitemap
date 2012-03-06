@@ -35,12 +35,6 @@ function wpsm_add_menu() {
 wp_register_style('slickmap.css', SLICKMAP_PLUGIN_URL . '/slickmap.css');
 wp_enqueue_style('slickmap.css');
 
-function register_sitemap_menu() {
-
-        if ( !has_nav_menu('sitemap') ) {
-            register_nav_menu('sitemap', __('Sitemap Menu' ) );
-        }
-}
 
 function slick_sitemap_shortcode_handler($args)
 {    
@@ -94,12 +88,8 @@ function slick_sitemap_shortcode_handler($args)
 */
 add_shortcode('slick-sitemap', 'slick_sitemap_shortcode_handler');
 
-?>
-
-<?php
 function wpsm_menu_function() {
 ?>
-
 <div class="wrap">
 <h2>Slick Sitemap</h2>
  
@@ -175,5 +165,4 @@ function wpsm_menu_function() {
  
 </form>
 </div>
-
 <?php } ?>
