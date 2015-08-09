@@ -31,6 +31,9 @@ Nothing here until now..
 3. Configure the Slick Sitemap.
 
 == Changelog ==
+= 1.0.0 =
+* Released on 03/05/2012
+* Initial release of Slick Sitemap plugin.
 
 = 2.0.0 =
 * Released on 08/08/2015
