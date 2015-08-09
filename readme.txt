@@ -11,14 +11,18 @@ Adds a Slick HTML (Not XML) sitemap of your site by entering the shortcode [slic
 
 == Description ==
 This simple plugin adds a slick HTML (Not XML) sitemap of you site by entering the shortcode [slick-sitemap] in the page content. This simple plugin is configured from the dashboard. Settings include the `menu`, `column`, `utility menu`. You can select a menu you created.
+The new release enables the user to add multiple sitemaps to their website. instead of specify the menu in through the dashboard, user can specify menus through the short tag attribute. just like:
+[slick-sitemap sitemap_menu='sitemap' utility_menu='utility' column=5].
 
 
 == Installation ==
 1. Copy the entire directory from the downloaded zip file into the /wp-content/plugins/ folder.
 2. Activate the "Slick Sitemap" plugin in the Plugin Management page.
 3. Create a navigation menu for the sitemap.
-4. Configure the Slick sitemap in the coniguration page. Specify the menu for the map, and column for the layout.
-5. Add the shortcode [slick-sitemap] to the post(s) or page(s) of your choice.
+4. Configure the Slick sitemap in the coniguration page. Specify the default menu for the map, default utility menu, and default column for the layout.
+5. Add the shortcode [slick-sitemap] to the post(s) or page(s) of your choice with the default choice performed by the previous step. You can always specify the menu by short tag attribute like: 
+[slick-sitemap sitemap_menu='sitemap' utility_menu='utility' column=5] or [slick-sitemap sitemap_menu='sitemap' column=6] with the utility menu using the default setting.
+
 	
 == Frequently Asked Questions ==
 
