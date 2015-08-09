@@ -41,10 +41,32 @@ function slick_sitemap_shortcode_handler($args)
 	if( is_feed() )
 		return '';
 
-        $menu = get_option('wpsm_menu');
-        $column = get_option('wpsm_column');
-        $utility_menu = get_option("wpsm_utility_menu");
-        
+		$atts = shortcode_atts(
+								array(
+									'sitemap_menu' => '',
+									'utility_menu' => '',
+									'column'=>'',
+								), $args);
+		
+		$sitemap_menu_name = $atts['sitemap_menu'];
+        $column = $atts['column'];
+        $utility_menu_name = $atts["utility_menu"];	
+		
+		$menu = get_option('wpsm_menu');
+		if(!empty($sitemap_menu_name)){
+			$menu_object = wp_get_nav_menu_object( $sitemap_menu_name );	
+			$menu = $menu_object->term_id;
+		}
+		$utility_menu = get_option("wpsm_utility_menu");
+		if(!empty($utility_menu_name)){
+			$utility_menu_object = wp_get_nav_menu_object( $utility_menu_name ); 
+			$utility_menu = $utility_menu_object->term_id;
+		}
+		
+        if(empty($column)){
+			$column = get_option('wpsm_column');
+		}
+
         if(isset($menu)||isset($utility_menu)){
             $defaults = array( 'menu' => '', 'container' => 'div', 'container_class' => '', 'container_id' => '', 'menu_class' => 'menu', 'menu_id' => '',
             'echo' => true, 'fallback_cb' => 'wp_page_menu', 'before' => '', 'after' => '', 'link_before' => '', 'link_after' => '', 'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
@@ -97,7 +119,7 @@ function wpsm_menu_function() {
     <?php settings_fields( 'wpsm-settings-group' ); ?>
     <table class="form-table">
         <tr valign="top">
-        <th scope="row">Menu</th>
+        <th scope="row">Default Sitemap Menu</th>
         <td>
         <select name="wpsm_menu" id="wpsm_menu"> 
 			 <option value="">Select a Menu</option> 
@@ -118,7 +140,7 @@ function wpsm_menu_function() {
         </tr>
     	
         <tr valign="top">
-        <th scope="row">Columns</th>
+        <th scope="row">Default Columns</th>
         <td>
         <label>
         <?php $columns = get_option('wpsm_column'); ?>
@@ -138,7 +160,7 @@ function wpsm_menu_function() {
         </tr>
         
       <tr valign="top">
-        <th scope="row">Utility Menu</th>
+        <th scope="row">Default Utility Menu</th>
         <td>
         <select name="wpsm_utility_menu" id="wpsm_utility_menu"> 
 			 <option value="">Select a Menu for Utility</option> 
