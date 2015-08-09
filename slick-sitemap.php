@@ -3,7 +3,7 @@
 Plugin Name: Slick Sitemap
 Plugin URI: http://pengbos.com/blog/slick-html-sitemap
 Description: <a href="http://pengbos.com/blog/slick-html-sitemap" target="_blank">Slick Sitemap</a> Adds an HTML (Not XML) sitemap of your blog by entering the shortcode [slick-sitemap]. A plugin from <a href="http://pengbos.com/" target="_blank">Plugins and Themes: Pengbos.com</a>.
-Version: 1.0.0
+Version: 2.0.0
 Author: Pengbo Tang
 Author URI: http://pengbos.com
 
@@ -11,7 +11,7 @@ Contributors:
 	Pengbo Tang, host of the pengbos.com http://pengbos.com - Plugin author
         Matt Everson of Astuteo, LLC http://astuteo.com/slickmap - CSS Creator
 
-Copyright 2011=2013 Pengbo Tang, host of the Pengbos.com (http://pengbos.com)
+Copyright 2011=2015 Pengbo Tang, host of the Pengbos.com (http://pengbos.com)
 
 License: GPL (http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt)
 */

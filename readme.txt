@@ -3,7 +3,7 @@ Contributors: Pengbo Tang of http://pengbos.com
 Author URI: http://pengbos.com
 Donate link: http://pengbos.com/donate
 Tags: slick, sitemap, menu, shortcode, cms, configurable, wordpress, site, html
-Requires at least: 4.2.4
+Requires at least: 3.0.0
 Tested up to: 4.2.4
 Stable tag: 2.0.0
 
