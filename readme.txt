@@ -3,9 +3,9 @@ Contributors: Pengbo Tang of http://pengbos.com
 Author URI: http://pengbos.com
 Donate link: http://pengbos.com/donate
 Tags: slick, sitemap, menu, shortcode, cms, configurable, wordpress, site, html
-Requires at least: 3.0.0
-Tested up to: 3.0.0
-Stable tag: 1.0.0
+Requires at least: 4.2.4
+Tested up to: 4.2.4
+Stable tag: 2.0.0
 
 Adds a Slick HTML (Not XML) sitemap of your site by entering the shortcode [slick-sitemap], easy and flexible to configure, no coding needed, perfect for those who use WordPress as a CMS.
 
@@ -32,9 +32,11 @@ Nothing here until now..
 
 == Changelog ==
 
-= 1.0.0 =
-* Released on 03/05/2012
-* Initial release of Slick Sitemap plugin.
+= 2.0.0 =
+* Released on 08/08/2015
+* Add new feature to support multiple sitemaps for one wordpress site, by using the short tag attributes.
+[slick-sitemap sitemap_menu='sitemap' utility_menu='utility' column=5]
+
 
 == Contributors ==
 Plugin author: Pengbo Tang, host of the pengbos.com http://pengbos.com - 
