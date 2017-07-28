@@ -32,12 +32,15 @@ function wpsm_add_menu() {
     $page = add_options_page('Slick Sitemap', 'Slick Sitemap', 'administrator', 'wpsm_menu', 'wpsm_menu_function');
 }
 
-wp_register_style('slickmap.css', SLICKMAP_PLUGIN_URL . '/slickmap.css');
-wp_enqueue_style('slickmap.css');
+function wpsm_enqueue_css() {
+	wp_register_style('slickmap.css', SLICKMAP_PLUGIN_URL . '/slickmap.css');
+	wp_enqueue_style('slickmap.css');
+}
+add_action( 'wp_enqueue_scripts', 'wpsm_enqueue_css' );
 
 
 function slick_sitemap_shortcode_handler($args)
-{    
+{
 	if( is_feed() )
 		return '';
 
@@ -47,22 +50,22 @@ function slick_sitemap_shortcode_handler($args)
 									'utility_menu' => '',
 									'column'=>'',
 								), $args);
-		
+
 		$sitemap_menu_name = $atts['sitemap_menu'];
         $column = $atts['column'];
-        $utility_menu_name = $atts["utility_menu"];	
-		
+        $utility_menu_name = $atts["utility_menu"];
+
 		$menu = get_option('wpsm_menu');
 		if(!empty($sitemap_menu_name)){
-			$menu_object = wp_get_nav_menu_object( $sitemap_menu_name );	
+			$menu_object = wp_get_nav_menu_object( $sitemap_menu_name );
 			$menu = $menu_object->term_id;
 		}
 		$utility_menu = get_option("wpsm_utility_menu");
 		if(!empty($utility_menu_name)){
-			$utility_menu_object = wp_get_nav_menu_object( $utility_menu_name ); 
+			$utility_menu_object = wp_get_nav_menu_object( $utility_menu_name );
 			$utility_menu = $utility_menu_object->term_id;
 		}
-		
+
         if(empty($column)){
 			$column = get_option('wpsm_column');
 		}
@@ -76,8 +79,8 @@ function slick_sitemap_shortcode_handler($args)
             $args = apply_filters( 'wp_nav_menu_args', $args );
             $args = (object) $args;
         }
-        
-        
+
+
         $menu_list="";
         if(isset($utility_menu)){
              $utility_menu_items = wp_get_nav_menu_items($utility_menu);
@@ -114,18 +117,18 @@ function wpsm_menu_function() {
 ?>
 <div class="wrap">
 <h2>Slick Sitemap</h2>
- 
+
 <form method="post" action='options.php'>
     <?php settings_fields( 'wpsm-settings-group' ); ?>
     <table class="form-table">
         <tr valign="top">
         <th scope="row">Default Sitemap Menu</th>
         <td>
-        <select name="wpsm_menu" id="wpsm_menu"> 
-			 <option value="">Select a Menu</option> 
- 			<?php 
+        <select name="wpsm_menu" id="wpsm_menu">
+			 <option value="">Select a Menu</option>
+ 			<?php
  				$menu = get_option('wpsm_menu');
-  				$allmenus=  wp_get_nav_menus(); 
+  				$allmenus=  wp_get_nav_menus();
   				foreach ($allmenus as $m) {
   					$option = '<option value="'.$m->term_id.'"';
   					if ($menu == $m->term_id) $option .= ' selected="selected">';
@@ -138,7 +141,7 @@ function wpsm_menu_function() {
 		</select>
 
         </tr>
-    	
+
         <tr valign="top">
         <th scope="row">Default Columns</th>
         <td>
@@ -158,15 +161,15 @@ function wpsm_menu_function() {
         </select>
         </label>
         </tr>
-        
+
       <tr valign="top">
         <th scope="row">Default Utility Menu</th>
         <td>
-        <select name="wpsm_utility_menu" id="wpsm_utility_menu"> 
-			 <option value="">Select a Menu for Utility</option> 
- 			<?php 
+        <select name="wpsm_utility_menu" id="wpsm_utility_menu">
+			 <option value="">Select a Menu for Utility</option>
+ 			<?php
  				$menu = get_option('wpsm_utility_menu');
-  				$allmenus=  wp_get_nav_menus(); 
+  				$allmenus=  wp_get_nav_menus();
   				foreach ($allmenus as $m) {
   					$option = '<option value="'.$m->term_id.'"';
   					if ($menu == $m->term_id) $option .= ' selected="selected">';
@@ -180,11 +183,11 @@ function wpsm_menu_function() {
 
         </tr>
     </table>
- 
+
     <p class="submit">
     <input type="submit" class="button-primary" value="<?php _e('Save Changes') ?>" />
     </p>
- 
+
 </form>
 </div>
 <?php } ?>
